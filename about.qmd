@@ -8,16 +8,18 @@ about:
 
 This comes from the file `about.qmd`.
 
-This is a website for the final project for MA[46]15 Data Science with R by Team TEAMNAME.
+This is a website for the final project for MA[46]15 Data Science with R by Team 13.
 The members of this team are below.
 
-## Jiaming Hu
+## Grace Chong
 
-Jiaming is a Ph.D. student in Stats and is the Teaching Fellow for the course.
+## Ruxin Wen
+Ruxin is a junior undergraduate student majoring in Data Science. [Github](https://github.com/wenruxin)
 
-## Dan Sussman
+## Xuru Miao
 
-Dan is a professor in the Math/Stat department and is the instructor for the course. [Github](https://github.com/dpmcsuss)
+## Jimin Park
+
 
 <!-- Please leave in the information below -->
 
