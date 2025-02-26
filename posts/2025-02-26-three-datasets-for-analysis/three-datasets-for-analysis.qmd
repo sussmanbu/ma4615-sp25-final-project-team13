@@ -1,0 +1,35 @@
+---
+title: "Three Datasets for Analysis"
+description:  |
+  This post explores three potential datasets for analyzing racial disparities
+  from different perspectives.
+author: "Grace Chong, Ruxin Wen, Xuru Miao"
+date: "2025-02-26"
+date-modified: "2025-02-26"
+draft: FALSE
+---
+
+### Dataset 1: Home Mortgage Disclosure Act Data
+
+[Home Mortgage Disclosure Act Data](https://ffiec.cfpb.gov/data-publication/dynamic-national-loan-level-dataset/2023)
+
+This dataset contains millions of records on mortgage applications and originations. One can extract specific information by year from 2000 to 2023. It includes data on applicant demographics, loan characteristics, and property details.This data aims to promote fair lending practices and help identify potential discriminatory lending patterns. 
+
+We will be using this data in CSV format. Cleaning will be a given, but the main challenges would be investigating the years and the significance of the patterns within each year. An additional challenge is that this dataset is large and may require computational resources (computing cluster). Some questions we may investigate: Are there racial disparities in mortgage approval rates, controlling for income and credit scores? How do racial patterns in home loan applications vary across different geographic regions?
+
+### Dataset 2: Traffic Stops - Racial Profiling Prohibition Project
+
+[Traffic Stops - Racial Profiling Prohibition Project](https://data.ct.gov/Public-Safety/Traffic-Stops-Racial-Profiling-Prohibition-Project/nahi-zqrt/about_data)
+
+This dataset contains 3.1 million rows and 42 columns, with each row representing a traffic stop in Connecticut. The columns include information about the date, time, location, and reason for the stop, as well as details about the driver’s race, ethnicity, gender, and age. It also records the outcome of each stop, such as warnings, tickets, searches, or arrests. This data was collected as part of Connecticut’s Racial Profiling Prohibition Project, established by Public Act 12-74. The goal is to monitor and prevent racial profiling in traffic enforcement, ensuring compliance with federal anti-profiling laws. The data is used to provide transparency in law enforcement practices and inform legislative decisions.
+
+We aim to explore whether there are racial disparities in traffic stops, including differences in the frequency of stops, reasons for stops, and outcomes such as searches, arrests, or warnings. The data is available in downloadable CSV format, making it straightforward to load using tools like R. However the dataset’s size (3.1 million rows) may require efficient data handling and processing techniques to ensure smooth analysis.
+
+
+### Dataset 3: Civil Rights Data Collection - Advanced Placement
+
+[Civil Rights Data Collection - Advanced Placement](https://ocrdata.ed.gov/profile/us/la/caddo_parish/youree_dr._middle_advanced_placement_magnet_school?surveyYear=2020&nces=220030000213)
+
+This dataset from the Civil Rights Data Collection (CRDC) contains 98,010 rows and 98 columns, documenting Advanced Placement (AP) course participation across schools in various U.S. states. Each row represents a school, detailing AP enrollment, exam participation, and performance, disaggregated by race, gender, and special education status. By analyzing this dataset, we can gain insights into systemic inequalities in advanced education opportunities. The findings can help inform policies aimed at closing racial gaps in access to college-preparatory coursework, ensuring that all students—regardless of racial background—have equitable opportunities to succeed in higher education.
+
+The dataset is available in CSV format and can be loaded into analytical tools like Python (pandas) or R (Tidyverse) for processing. While the data is relatively structured, challenges include handling missing values, standardizing racial categories across different states, and ensuring that comparisons are made in the appropriate socioeconomic and policy context. Additionally, since the dataset is large (98,010 rows and 98 columns), efficient data handling techniques will be necessary to ensure smooth analysis.
