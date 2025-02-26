@@ -12,14 +12,16 @@ This is a website for the final project for MA[46]15 Data Science with R by Team
 The members of this team are below.
 
 ## Grace Chong
+Grace is a senior undergraduate student majoring in Data Science and minoring in Art. 
+[Github](https://github.com/grace4ch)
 
 ## Ruxin Wen
 Ruxin is a junior undergraduate student majoring in Data Science. [Github](https://github.com/wenruxin)
 
 ## Xuru Miao
 
-## Jimin Park
-
+Xuru is a graduate student majoring in Bioinformatics.
+[Github](http://github.com/Alice-ppt)
 
 <!-- Please leave in the information below -->
 
