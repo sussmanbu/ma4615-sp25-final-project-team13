@@ -102,7 +102,7 @@
     "href": "about.html#grace-chong",
     "title": "About",
     "section": "Grace Chong",
-    "text": "Grace Chong"
+    "text": "Grace Chong\nGrace is a senior undergraduate student majoring in Data Science and minoring in Art. Github"
   },
   {
     "objectID": "about.html#ruxin-wen",
@@ -116,14 +116,7 @@
     "href": "about.html#xuru-miao",
     "title": "About",
     "section": "Xuru Miao",
-    "text": "Xuru Miao"
-  },
-  {
-    "objectID": "about.html#jimin-park",
-    "href": "about.html#jimin-park",
-    "title": "About",
-    "section": "Jimin Park",
-    "text": "Jimin Park\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
+    "text": "Xuru Miao\nXuru is a graduate student majoring in Bioinformatics. Github\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
   },
   {
     "objectID": "big_picture.html",
