@@ -5,7 +5,7 @@ date: "2025-03-16"
 date-modified: "2025-03-16"
 draft: FALSE
 ---
-[Traffic Stops - Racial Profiling Prohibition Project](https://data.ct.gov/Public-Safety/Traffic-Stops-Racial-Profiling-Prohibition-Project/nahi-zqrt/about_data)
+[Traffic Stops - Racial Profiling Prohibition Project](https://data.ct.gov/Public-Safety/Traffic-Stops-Racial-Profiling-Prohibition-Project/nahi-zqrt/about_data) 
 
 ### Data background
 
