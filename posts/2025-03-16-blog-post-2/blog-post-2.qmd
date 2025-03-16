@@ -1,0 +1,14 @@
+---
+title: "Blog Post 2"
+author: "Ruxin Wen, Grace Chong, Xuru Miao"
+date: "2025-03-16"
+date-modified: "2025-03-16"
+draft: FALSE
+---
+[Traffic Stops - Racial Profiling Prohibition Project](https://data.ct.gov/Public-Safety/Traffic-Stops-Racial-Profiling-Prohibition-Project/nahi-zqrt/about_data)
+
+### Data background
+
+The dataset comes from the Connecticut Racial Profiling Prohibition Project (CTRP3), which was established by the Connecticut General Assembly in 2012 through Public Act 12-74 and later amended by Public Act 13-75. The data is collected by police departments across Connecticut who are required by law to submit records of all traffic stops to the state. The collection was mandated to identify and address potential racial profiling in police traffic enforcement. The original source is accessible through the Connecticut Open Data Portal, administered by the state government, with individual police departments being responsible for submitting their stop data.
+
+There are several potential issues with data collection, including inconsistencies in reporting across different departments, potential underreporting of stops, and variability in how officers record racial/ethnic identity. The sample population consists of all drivers stopped by police in Connecticut, which may not represent the actual driving population and could be biased toward areas with higher police presence. The dataset has been used extensively for policy decisions regarding police training and accountability measures in Connecticut. Research questions have focused on disparities in stop rates, post-stop outcomes (searches, citations, arrests), and the effectiveness of policy interventions in reducing racial disparities. The Central Connecticut State University's Institute for Municipal and Regional Policy has conducted annual analyses of this data to identify departments with statistically significant racial disparities, leading to policy recommendations and departmental reviews.
