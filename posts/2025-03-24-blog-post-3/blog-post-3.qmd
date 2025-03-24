@@ -1,0 +1,23 @@
+---
+title: "Blog Post 3"
+author: "Team13"
+date: "2025-03-24"
+date-modified: "2025-03-24"
+draft: FALSE
+---
+### Data Loading and Cleaning
+Because the dataset is very large, we used the `vroom()` package to load the data efficiently. During this process, we noticed some problems with how certain columns were interpreted. Specifically, two columns (IsStatuteCodeValid and IsStatutatoryCitationValid) that actually contained timestamp strings were mistakenly read as logical values (`TRUE/FALSE`). This mismatch caused parsing errors, so we fixed it by manually setting those columns to character type during import using the `col_types` argument.
+
+After the data was successfully loaded, we examined how much missing data existed in each column. We found that several columns contained mostly missing values. To visualize this, we created a bar chart showing the number of missing values in each column (**Figure 1**). Because some columns had such large amounts of missing data, we used a log scale on the x-axis to make differences across all columns easier to compare. Without the log scale, the missing values in other columns would have been almost invisible by comparison.
+
+![](figure-1-missing-values-log.png)
+*Figure 1: Missing values per column (log scale)*
+
+To simplify our analysis, we decided to focus on a subset of variables that had fewer missing values and were most relevant to our research goal: exploring racial disparities in traffic stops. These selected variables include demographic information (such as race, sex, and age), as well as stop outcomes like whether the vehicle was searched or the person was arrested. We dropped rows with missing values in these columns and saved the cleaned version of the dataset as `cleaned_dataset.rds`.
+
+As part of our early analysis, we looked at custodial arrest rates by race. The bar chart in **Figure 2** shows that Black drivers (B) had the highest arrest rate at 2.4%, followed by White drivers (W) at 1.7%. Asian (A) and American Indian (I) drivers had the lowest arrest rates, both at 0.8%. This initial result points to a potential racial disparity in arrest outcomes that we plan to explore further.
+
+![](figure-2-arrest-rate-by-race.png)
+*Figure 2: Custodial arrest rate by race*
+
+> **Note:** Race codes — W = White, B = Black, A = Asian, I = American Indian.
