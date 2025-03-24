@@ -21,3 +21,12 @@ As part of our early analysis, we looked at custodial arrest rates by race. The 
 *Figure 2: Custodial arrest rate by race*
 
 > **Note:** Race codes — W = White, B = Black, A = Asian, I = American Indian.
+
+
+
+
+### Data for Equity
+One key principle from the Principles for Advancing Equitable Data Practice that is highly relevant to our project is transparency. The dataset we use includes millions of records from traffic stops, with information about driver demographics and outcomes like searches and arrests. However, the data has important limitations. For example, race is recorded by the police officer, not self-reported, and many fields contain missing or unclear values. Being transparent means clearly stating these issues so readers do not overinterpret the results. In our blog post, we explain which columns were excluded due to too much missing data and why we focused on a subset of variables with more complete information. We also clarify that our visualizations show correlations, not causation. Without transparency, the data could easily be misused to make unfair or inaccurate claims about different racial groups.
+
+Another important principle is beneficence, which means using data in a way that avoids harm and promotes good. Our analysis touches on sensitive topics like race and policing, so we have to be careful not to draw harmful conclusions. For example, we found that Black drivers had a higher custodial arrest rate than other groups. Instead of suggesting this is due to individual behavior, we present it as a possible sign of systemic bias. We avoid blaming individuals or communities and focus instead on what the data might say about broader patterns in enforcement. By using careful language and framing, we try to ensure that our work highlights disparities without reinforcing stereotypes or causing harm. Beneficence reminds us that working with real-world data means being responsible for how our findings might be interpreted.
+
