@@ -8,19 +8,23 @@ about:
 
 This comes from the file `about.qmd`.
 
-This is a website for the final project for MA[46]15 Data Science with R by Team TEAMNAME.
+This is a website for the final project for MA[46]15 Data Science with R by Team 13.
 The members of this team are below.
 
-## Jiaming Hu
+## Grace Chong
+Grace is a senior undergraduate student majoring in Data Science and minoring in Art. 
+[Github](https://github.com/grace4ch)
 
-Jiaming is a Ph.D. student in Stats and is the Teaching Fellow for the course.
+## Ruxin Wen
+Ruxin is a junior undergraduate student majoring in Data Science. [Github](https://github.com/wenruxin)
 
-## Dan Sussman
+## Xuru Miao
 
-Dan is a professor in the Math/Stat department and is the instructor for the course. [Github](https://github.com/dpmcsuss)
+Xuru is a graduate student majoring in Bioinformatics.
+[Github](http://github.com/Alice-ppt)
 
 <!-- Please leave in the information below -->
 
-### About this Template.
-
-This is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463).
+### Jimin Park
+Jimin is a senior undergraduate student majoring in Data Science. 
+[Github] (https://github.com/jimin599)
