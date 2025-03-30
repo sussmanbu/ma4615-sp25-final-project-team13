@@ -1,5 +1,5 @@
 ---
-title: "Three Datasets for Analysis"
+title: "Blog Post 1"
 description:  |
   This post explores three potential datasets for analyzing racial disparities
   from different perspectives.
