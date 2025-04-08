@@ -1,0 +1,10 @@
+<div class="listing-item">
+  <div class="listing-header">
+    <strong><a href="{{ .RelPermalink }}">{{ .Title }}</a></strong>
+  </div>
+  {{ if .Params.description }}
+    <div class="listing-description">
+      {{ .Params.description }}
+    </div>
+  {{ end }}
+</div>

@@ -9,6 +9,7 @@ listing:
   filter-ui: false
 page-layout: full
 title-block-banner: true
+layout: custom-title
 ---
 
 ![](images/data-science.png)
