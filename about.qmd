@@ -23,6 +23,10 @@ Ruxin is a junior undergraduate student majoring in Data Science. [Github](https
 Xuru is a graduate student majoring in Bioinformatics.
 [Github](http://github.com/Alice-ppt)
 
+## Jimin Park
+Jimin is a senior undergraduate student majoring in Data Science. 
+[Github](http://github.com/jimin599)
+
 <!-- Please leave in the information below -->
 
 ### About this Template.
