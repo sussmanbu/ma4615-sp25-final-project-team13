@@ -1,60 +1,93 @@
 # This file is purely as an example.
 # Note, you may end up creating more than one cleaned data set and saving that
 # to separate files in order to work on different aspects of your project
-library(readr)
-library(dplyr)
-library(here)
+
+# Load required libraries
 library(tidyverse)
+library(here)
+
+# Set the path to the raw data file
 raw_data_path <- here("dataset-ignore", "raw_data.csv")
-library(readr)
 
-
+# Read the data, specifying certain columns as character type
 raw_data <- read_csv(raw_data_path, col_types = cols(
   IsStatuteCodeValid = col_character(),
   IsStatutatoryCitationValid = col_character()
 ))
 
+# Explore the data
 glimpse(raw_data)
 head(raw_data)
+
+# Count missing values in each column
 colSums(is.na(raw_data))
-
+# Convert to data frame and sort by missing values in descending order
 null_counts <- colSums(is.na(raw_data))
-
-
 null_df <- data.frame(
   Column = names(null_counts),
   NullCount = null_counts
 ) |>
   arrange(desc(NullCount))
 
+# Plot: Bar chart of null counts per column (log10 scale)
 ggplot(null_df, aes(y = reorder(Column, NullCount), x = log10(NullCount + 1))) +
-  geom_bar(stat = "identity") +
+  geom_bar(stat = "identity", fill = "steelblue") +
   labs(title = "Log10 Scale of Null Counts per Column (Descending)",
        x = "Log10(Null Count + 1)",
        y = "Columns") +
   theme_minimal()
 
-
+# Calculate total number of rows
 total_rows <- nrow(raw_data)
 
+
+# Create data frame with null percentage and filter columns with >50% nulls
 null_counts <- colSums(is.na(raw_data))
-
-
 high_nulls <- data.frame(
   Column = names(null_counts),
   NullCount = null_counts,
   NullPercentage = (null_counts / total_rows) * 100
 ) |>
-  filter(NullPercentage > 50) |>
+  filter(NullPercentage > 0.05) |>
   arrange(desc(NullPercentage))
-
 print(high_nulls)
 
+unique_values <- lapply(raw_data, unique)
 
-na_sex_data <- raw_data |> filter(is.na(SubjectSexCode))
 
-print(head(na_sex_data))
-# View(na_sex_data)
+
+# 计算唯一值
+unique_values <- lapply(raw_data, unique)
+
+# 转换为整洁的数据框
+unique_df <-data.frame(
+  datatable(unique_df) )
+  
+  
+#转化 InterventionDateTime 格式
+library(lubridate)
+
+raw_data <- raw_data |>
+  filter(!is.na(InterventionDateTime))
+# 转换日期时间（自动识别 AM/PM）
+raw_data$InterventionDateTime <- mdy_hms(raw_data$InterventionDateTime)
+
+head(raw_data$InterventionDateTime, 100)
+
+raw_data <- raw_data |>
+  mutate(
+    InterventionDate = as_date(InterventionDateTime),      # Only date
+    InterventionYear = year(InterventionDateTime),
+    InterventionMonth = month(InterventionDateTime, label = TRUE),
+    InterventionWeekday = wday(InterventionDateTime, label = TRUE),
+    InterventionHour = hour(InterventionDateTime)
+  )
+
+
+
+
+unique(raw_data$Day of Week)
+
 
 # ------ Subset
 
