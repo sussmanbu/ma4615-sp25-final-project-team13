@@ -28,7 +28,7 @@ null_df <- data.frame(
   NullCount = null_counts
 ) |>
   arrange(desc(NullCount))
-
+null_counts
 # Plot: Bar chart of null counts per column (log10 scale)
 ggplot(null_df, aes(y = reorder(Column, NullCount), x = log10(NullCount + 1))) +
   geom_bar(stat = "identity", fill = "steelblue") +
@@ -48,78 +48,121 @@ high_nulls <- data.frame(
   NullCount = null_counts,
   NullPercentage = (null_counts / total_rows) * 100
 ) |>
-  filter(NullPercentage > 0.05) |>
+  filter(NullPercentage > 0.5) |>
   arrange(desc(NullPercentage))
 print(high_nulls)
 
-unique_values <- lapply(raw_data, unique)
+#Unique
+lapply(raw_data$InterventionIdentificationID,unique)
+ls(raw_data)
+raw_data$StatuteReason
 
 
 
-# 计算唯一值
-unique_values <- lapply(raw_data, unique)
-
-# 转换为整洁的数据框
-unique_df <-data.frame(
-  datatable(unique_df) )
-  
-  
-#转化 InterventionDateTime 格式
-library(lubridate)
-
-raw_data <- raw_data |>
-  filter(!is.na(InterventionDateTime))
-# 转换日期时间（自动识别 AM/PM）
-raw_data$InterventionDateTime <- mdy_hms(raw_data$InterventionDateTime)
-
-head(raw_data$InterventionDateTime, 100)
-
-raw_data <- raw_data |>
-  mutate(
-    InterventionDate = as_date(InterventionDateTime),      # Only date
-    InterventionYear = year(InterventionDateTime),
-    InterventionMonth = month(InterventionDateTime, label = TRUE),
-    InterventionWeekday = wday(InterventionDateTime, label = TRUE),
-    InterventionHour = hour(InterventionDateTime)
-  )
-
-
-
-
-unique(raw_data$Day of Week)
 
 
 # ------ Subset
 
 selected_vars <- c(
-  "Department Name", 
-  "InterventionDate", 
-  "SubjectRaceCode", 
-  "SubjectEthnicityCode", 
-  "SubjectSexCode", 
-  "SubjectAge", 
-  "InterventionReasonCode", 
-  "InterventionDispositionCode", 
-  "VehicleSearchedIndicator", 
-  "SearchAuthorizationCode", 
-  "ContrabandIndicator", 
-  "CustodialArrestIndicator"
+  "InterventionDispositionCode", "CustodialArrestIndicator", "SubjectAge",
+  "TowedIndicator", "InterventionDurationCode", "InterventionDateTime",
+  "InterventionDate", "Month", "SubjectRaceCode", "SubjectEthnicityCode",
+  "SubjectSexCode", "TownRecidentIndicator", "ResidentIndicator",
+  "InterventionLocationName", "InterventionReasonCode", "InterventionTechniqueCode",
+  "StatuteReason", "SearchAuthorizationCode", "ContrabandIndicator",
+  "VehicleSearchedIndicator", "OrganizationIdentificationID", "Department Name"
 )
 
-
-sub_data <- raw_data |>
+selected_data <- raw_data |>
   select(all_of(selected_vars))
+# 查看缺失值个数，并按数量降序排列
+na_counts <- sapply(selected_data, function(x) sum(is.na(x)))
+na_counts <- sort(na_counts, decreasing = TRUE)
+
+# 打印结果
+na_counts
+na_summary <- data.frame(
+  Variable = names(na_counts),
+  MissingCount = as.numeric(na_counts)
+)
+
+print(na_summary)
 
 
-glimpse(sub_data)
-#view(sub_data)
+clean_data <- selected_data|>
+  na.omit()
 
-colSums(is.na(sub_data))
+# 看unique value
 
-cleaned_data <- sub_data|> na.omit()
-dim(cleaned_data)
-colSums(is.na(cleaned_data))
+library(dplyr)
+library(purrr)
 
+clean_data %>%
+  map(~ unique(.x))
+
+# 个别的value修正
+table(clean_data$SubjectEthnicityCode)
+table(clean_data$TownRecidentIndicator)
+table(clean_data$InterventionReasonCode)
+
+clean_data <- clean_data %>%
+  mutate(
+    # 将 "m" 变为 "M"
+    SubjectEthnicityCode = ifelse(SubjectEthnicityCode == "m", "M", SubjectEthnicityCode),
+    
+    # 将 "R" 替换为 1
+    TownRecidentIndicator = ifelse(TownRecidentIndicator == "R", "TRUE", TownRecidentIndicator),
+    
+    # 将 "no" 替换为 NA
+    InterventionReasonCode = ifelse(InterventionReasonCode == "no", NA, InterventionReasonCode)
+  )
+table(clean_data$SubjectEthnicityCode)
+table(clean_data$TownRecidentIndicator)
+table(clean_data$InterventionReasonCode)
+
+# 通用转换函数 0 1 false true
+to_logical <- function(x) {
+  if (is.character(x) || is.factor(x)) {
+    x <- as.character(x)
+    case_when(
+      x %in% c("1", "TRUE") ~ TRUE,
+      x %in% c("0", "FALSE") ~ FALSE,
+      TRUE ~ NA
+    )
+  } else {
+    x  # 如果已经是逻辑值就不动
+  }
+}
+
+# 批量转换指定变量
+clean_data <- clean_data %>%
+  mutate(
+    ContrabandIndicator = to_logical(ContrabandIndicator),
+    VehicleSearchedIndicator = to_logical(VehicleSearchedIndicator),
+    TownRecidentIndicator = to_logical(TownRecidentIndicator),
+    ResidentIndicator = to_logical(ResidentIndicator),
+    TowedIndicator = to_logical(TowedIndicator),
+    CustodialArrestIndicator = to_logical(CustodialArrestIndicator)
+  )
+
+sapply(clean_data[c(
+  "ContrabandIndicator", "VehicleSearchedIndicator", 
+  "TownRecidentIndicator", "ResidentIndicator", 
+  "TowedIndicator", "CustodialArrestIndicator"
+)], table)
+
+clean_data <- clean_data|>
+  na.omit()
+
+#再看unique值
+clean_data %>%
+  map(~ unique(.x))
+
+
+write_rds(clean_data, here::here("dataset-ignore", "clean_selected_data.rds"))
+
+
+#  EDA  -------------
 library(ggplot2)
 
 ggplot(cleaned_data, aes(x = SubjectRaceCode)) +

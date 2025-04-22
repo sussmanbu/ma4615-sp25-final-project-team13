@@ -427,7 +427,7 @@ ct_map_combined <- ct_map_combined |>
 ggplot(ct_map_combined) +
   geom_sf(aes(fill = OverRepIndexCapped), color = "white", size = 0.2) +
   scale_fill_viridis_c(
-    option = "plasma",
+    option = "rocket",
     trans = "log2",  # 保持感知上的对数刻度
     na.value = "gray90",
     name = "Over-rep Index",
