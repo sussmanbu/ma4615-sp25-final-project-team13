@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: images/profile.jpg
+image: images/car-image.png
 about:
   template: jolla
 ---
