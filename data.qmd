@@ -5,7 +5,7 @@ toc: true
 draft: false
 ---
 
-![](images/data-import-cheatsheet-thumbs.png)
+![](images/connecticut.jpg)
 
 
 This comes from the file `data.qmd`.
