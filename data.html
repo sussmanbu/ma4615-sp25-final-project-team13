@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -128,6 +162,18 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#clean-data-script" id="toc-clean-data-script" class="nav-link" data-scroll-target="#clean-data-script">Clean data script</a></li>
   </ul></li>
   <li><a href="#rubric-on-this-page" id="toc-rubric-on-this-page" class="nav-link" data-scroll-target="#rubric-on-this-page">Rubric: On this page</a></li>
+  <li><a href="#dataset-1-traffic-stops---racial-profiling-prohibition-project-connecticut" id="toc-dataset-1-traffic-stops---racial-profiling-prohibition-project-connecticut" class="nav-link" data-scroll-target="#dataset-1-traffic-stops---racial-profiling-prohibition-project-connecticut">Dataset 1: Traffic Stops - Racial Profiling Prohibition Project (Connecticut)</a>
+  <ul class="collapse">
+  <li><a href="#data-files-and-key-variables" id="toc-data-files-and-key-variables" class="nav-link" data-scroll-target="#data-files-and-key-variables">Data Files and Key Variables</a></li>
+  <li><a href="#data-cleaning-process" id="toc-data-cleaning-process" class="nav-link" data-scroll-target="#data-cleaning-process">Data Cleaning Process</a></li>
+  <li><a href="#additional-data-cleaning-and-integration-with-acs" id="toc-additional-data-cleaning-and-integration-with-acs" class="nav-link" data-scroll-target="#additional-data-cleaning-and-integration-with-acs">Additional Data Cleaning and Integration with ACS</a></li>
+  </ul></li>
+  <li><a href="#dataset-2-american-community-survey-acs-5-year-estimates-20152019---connecticut" id="toc-dataset-2-american-community-survey-acs-5-year-estimates-20152019---connecticut" class="nav-link" data-scroll-target="#dataset-2-american-community-survey-acs-5-year-estimates-20152019---connecticut">Dataset 2: American Community Survey (ACS) 5-Year Estimates (2015–2019) - Connecticut</a>
+  <ul class="collapse">
+  <li><a href="#data-files-and-key-variables-1" id="toc-data-files-and-key-variables-1" class="nav-link" data-scroll-target="#data-files-and-key-variables-1">Data Files and Key Variables</a></li>
+  <li><a href="#cleaning-the-acs-population-data" id="toc-cleaning-the-acs-population-data" class="nav-link" data-scroll-target="#cleaning-the-acs-population-data">Cleaning the ACS Population Data</a></li>
+  <li><a href="#combining-traffic-stops-with-population-data" id="toc-combining-traffic-stops-with-population-data" class="nav-link" data-scroll-target="#combining-traffic-stops-with-population-data">Combining Traffic Stops with Population Data</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -158,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="images/data-import-cheatsheet-thumbs.png" class="img-fluid"></p>
+<p><img src="images/connecticut.jpg" class="img-fluid"></p>
 <p>This comes from the file <code>data.qmd</code>.</p>
 <p>Your first steps in this project will be to find data to work on.</p>
 <p>I recommend trying to find data that interests you and that you are knowledgeable about. A bad example would be if you have no interest in video games but your data set is about video games. I also recommend finding data that is related to current events, social justice, and other areas that have an impact.</p>
@@ -218,8 +264,455 @@ ul.task-list li input[type="checkbox"] {
 <li>This page should be self-contained.</li>
 </ul></li>
 </ul>
+<hr>
+</section>
+<section id="dataset-1-traffic-stops---racial-profiling-prohibition-project-connecticut" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-1-traffic-stops---racial-profiling-prohibition-project-connecticut">Dataset 1: Traffic Stops - Racial Profiling Prohibition Project (Connecticut)</h2>
+<ul>
+<li><p>This traffic stop data can be accessed via the <a href="https://data.ct.gov/Public-Safety/Traffic-Stops-Racial-Profiling-Prohibition-Project/nahi-zqrt/about_data">Connecticut Open Data Portal</a>, where it is made publicly available for transparency and accountability purposes.</p></li>
+<li><p>Information was submitted by police departments across Connecticut, then organized and published by the Connecticut Racial Profiling Prohibition Project (CTRP3), under the direction of the Institute for Municipal and Regional Policy at Central Connecticut State University.</p></li>
+<li><p>The collection of this data was required by state law (Public Act 12-74 and amended by Public Act 13-75), with the goal of monitoring police traffic enforcement practices and preventing racial profiling. Law enforcement agencies must report every traffic stop, along with key contextual and demographic information.</p></li>
+<li><p>Temporal coverage spans from 2013 to 2019, allowing for year-over-year comparisons and long-term analysis of enforcement patterns and policy outcomes over a seven-year period.</p></li>
+<li><p>Covering over 3.1 million individual stops, this dataset includes the date, time, and location of each stop, the driver’s race, ethnicity, age, and gender, the reason for the stop, and the outcome—such as whether a warning, citation, search, or arrest occurred. Because of its depth and scope, the dataset has been used to evaluate racial disparities, guide police training reforms, and support statewide equity reviews in traffic enforcement.</p></li>
+</ul>
+<hr>
+<section id="data-files-and-key-variables" class="level3">
+<h3 class="anchored" data-anchor-id="data-files-and-key-variables">Data Files and Key Variables</h3>
+<p>This project draws on two key datasets: (1) traffic stop records collected across Connecticut between 2013 and 2019, and (2) population-level demographic estimates from the American Community Survey (ACS) 5-Year Estimates (2015–2019). To reduce complexity and focus on the most informative attributes, we selected 22 relevant variables from the traffic stop data based on completeness and analytical value.</p>
+<section id="selected-variables-from-traffic-stop-dataset" class="level4">
+<h4 class="anchored" data-anchor-id="selected-variables-from-traffic-stop-dataset">Selected Variables from Traffic Stop Dataset</h4>
+<p><strong>Driver Demographics</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SubjectRaceCode</td>
+<td>Driver’s race (W=White, B=Black, A=Asian, I=American Indian)</td>
+</tr>
+<tr class="even">
+<td>SubjectEthnicityCode</td>
+<td>Driver’s ethnicity (H=Hispanic, N=Non-Hispanic, M=ME)</td>
+</tr>
+<tr class="odd">
+<td>SubjectSexCode</td>
+<td>Driver’s sex (M=Male, F=Female)</td>
+</tr>
+<tr class="even">
+<td>SubjectAge</td>
+<td>Driver’s age</td>
+</tr>
+<tr class="odd">
+<td>ResidentIndicator</td>
+<td>Resident of Connecticut</td>
+</tr>
+<tr class="even">
+<td>TownRecidentIndicator</td>
+<td>Resident of the town where stop occurred</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stop Context</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 67%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>InterventionDate</td>
+<td>Date of the stop</td>
+</tr>
+<tr class="even">
+<td>InterventionDateTime</td>
+<td>Full timestamp of the stop</td>
+</tr>
+<tr class="odd">
+<td>Month</td>
+<td>Month when the stop occurred</td>
+</tr>
+<tr class="even">
+<td>InterventionLocationName</td>
+<td>Town where the stop occurred</td>
+</tr>
+<tr class="odd">
+<td>OrganizationIdentificationID</td>
+<td>Unique code for reporting department</td>
+</tr>
+<tr class="even">
+<td>Department Name</td>
+<td>Name of the police department</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stop Reason and Method</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>InterventionReasonCode</td>
+<td>Reason for stop (E=Equipment, I=Investigative, V=Violation)</td>
+</tr>
+<tr class="even">
+<td>StatuteReason</td>
+<td>Legal basis/statute cited</td>
+</tr>
+<tr class="odd">
+<td>InterventionTechniqueCode</td>
+<td>Stop method used (B=Blind, G=General, S=Spot)</td>
+</tr>
+<tr class="even">
+<td>InterventionDurationCode</td>
+<td>Length of Stop: 1=0-15 Mins, 2=16-30 Mins, 3=Over 30 Mins</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Outcomes and Enforcement</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>InterventionDispositionCode</td>
+<td>Outcome of stop (Warning, Infraction, Arrest, etc.)</td>
+</tr>
+<tr class="even">
+<td>TowedIndicator</td>
+<td>Whether the vehicle was towed</td>
+</tr>
+<tr class="odd">
+<td>VehicleSearchedIndicator</td>
+<td>Whether the vehicle was searched</td>
+</tr>
+<tr class="even">
+<td>SearchAuthorizationCode</td>
+<td>Legal basis for the search</td>
+</tr>
+<tr class="odd">
+<td>ContrabandIndicator</td>
+<td>Whether contraband was found</td>
+</tr>
+<tr class="even">
+<td>CustodialArrestIndicator</td>
+<td>Whether a custodial arrest was made</td>
+</tr>
+</tbody>
+</table>
+<p>We selected these fields based on data completeness and relevance to our analysis of racial disparities, policing practices, and enforcement outcomes.</p>
+</section>
+<section id="null-value-distribution-by-column" class="level4">
+<h4 class="anchored" data-anchor-id="null-value-distribution-by-column">Null Value Distribution by Column</h4>
+<p>The following chart shows the number of null values in each column on a log scale, highlighting which fields had the most missing data. Fields with fewer nulls were prioritized in the final dataset.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Null-Count-Distribution.png" class="img-fluid figure-img"></p>
+<figcaption>Null Count Distribution</figcaption>
+</figure>
+</div>
+</section>
+<section id="subject-race-distribution" class="level4">
+<h4 class="anchored" data-anchor-id="subject-race-distribution">Subject Race Distribution</h4>
+<p>This chart shows how many drivers of different races were stopped. The majority of stops involved white drivers, but the proportion of stops involving Black and other non-white drivers raises critical questions for further analysis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Race-Distribution.png" class="img-fluid figure-img"></p>
+<figcaption>Race Distribution</figcaption>
+</figure>
+</div>
+</section>
+<section id="subject-sex-distribution" class="level4">
+<h4 class="anchored" data-anchor-id="subject-sex-distribution">Subject Sex Distribution</h4>
+<p>We also examined the gender breakdown of drivers. As shown below, a significantly higher number of stops involved male drivers compared to female drivers. This may reflect broader driving patterns, law enforcement discretion, or possible gender-based behavioral assumptions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Sex-distribution.png" class="img-fluid figure-img"></p>
+<figcaption>Distribution of Subject Sex Code</figcaption>
+</figure>
+</div>
+</section>
+<section id="duration-of-traffic-stops" class="level4">
+<h4 class="anchored" data-anchor-id="duration-of-traffic-stops">Duration of Traffic Stops</h4>
+<p>The majority of traffic stops lasted 15 minutes or less, as indicated by the dominance of code “1” in the chart below. Only a small fraction of stops extended beyond 30 minutes. This variable helps contextualize the scope of the stop and may reflect the intrusiveness or intensity of the enforcement action.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/duration-distribution.png" class="img-fluid figure-img"></p>
+<figcaption>Distribution of Intervention Duration Code</figcaption>
+</figure>
+</div>
+</section>
+<section id="monthly-traffic-stop-trends" class="level4">
+<h4 class="anchored" data-anchor-id="monthly-traffic-stop-trends">Monthly Traffic Stop Trends</h4>
+<p>To understand how stop frequency changes over time, we plotted the total number of stops each month from 2013 to 2019. The line chart below shows both seasonal patterns and structural shifts in policing activity.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/monthlystop-distribution.png" class="img-fluid figure-img"></p>
+<figcaption>Monthly Stop Distribution</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="data-cleaning-process" class="level3">
+<h3 class="anchored" data-anchor-id="data-cleaning-process">Data Cleaning Process</h3>
+<p>We cleaned the raw traffic stop data using a custom R script, which is available here:<br>
+<a href="https://github.com/sussmanbu/ma4615-sp25-final-project-team13/blob/main/scripts/clean_data.R"><code>clean_data.R</code></a><br>
+Cleaned dataset: <a href="https://github.com/your-repo-path/dataset-ignore/clean_selected_data.rds"><code>clean_selected_data.rds</code></a></p>
+<p>The original dataset included over 40 variables and more than 3 million rows. Many fields contained large proportions of missing or unusable values, so the first step was to identify and remove columns with a high percentage of nulls.</p>
+<p>We used <code>tidyverse</code> (especially <code>dplyr</code>, <code>ggplot2</code>, <code>purrr</code>) and <code>here</code> for reproducible path management. These packages were essential for selecting, transforming, and visualizing the data throughout our pipeline.</p>
+<section id="main-cleaning-steps" class="level4">
+<h4 class="anchored" data-anchor-id="main-cleaning-steps">Main Cleaning Steps</h4>
+<ul>
+<li><strong>Missing value analysis</strong>: We calculated the number and percentage of <code>NA</code> values in each column and removed columns with more than 50% missing values.</li>
+<li><strong>Column selection</strong>: Retained 22 columns based on their analytical relevance and data completeness.</li>
+<li><strong>Data filtering</strong>: Used <code>na.omit()</code> to drop rows with missing values in selected columns.</li>
+<li><strong>Factor and text cleaning</strong>:
+<ul>
+<li>Corrected inconsistent capitalization (<code>"m"</code> → <code>"M"</code> in <code>SubjectEthnicityCode</code>)<br>
+</li>
+<li>Replaced unclear codes like <code>"no"</code> with <code>NA</code> in <code>InterventionReasonCode</code><br>
+</li>
+<li>Standardized <code>"R"</code> to logical <code>TRUE</code> in <code>TownRecidentIndicator</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="variable-recoding" class="level4">
+<h4 class="anchored" data-anchor-id="variable-recoding">Variable Recoding</h4>
+<p>Several binary columns (e.g., <code>ContrabandIndicator</code>, <code>TowedIndicator</code>) were originally stored as <code>"1"/"0"</code> or <code>"TRUE"/"FALSE"</code> strings. These were recoded to proper logical <code>TRUE</code>/<code>FALSE</code> values using a custom function:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>to_logical <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.character</span>(x) <span class="sc">||</span> <span class="fu">is.factor</span>(x)) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">as.character</span>(x)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">case_when</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"TRUE"</span>) <span class="sc">~</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"FALSE"</span>) <span class="sc">~</span> <span class="cn">FALSE</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    x  </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We applied this transformation to the following fields:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> clean_data <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">ContrabandIndicator =</span> <span class="fu">to_logical</span>(ContrabandIndicator),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">VehicleSearchedIndicator =</span> <span class="fu">to_logical</span>(VehicleSearchedIndicator),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">TownRecidentIndicator =</span> <span class="fu">to_logical</span>(TownRecidentIndicator),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">ResidentIndicator =</span> <span class="fu">to_logical</span>(ResidentIndicator),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">TowedIndicator =</span> <span class="fu">to_logical</span>(TowedIndicator),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">CustodialArrestIndicator =</span> <span class="fu">to_logical</span>(CustodialArrestIndicator)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Time Parsing</p>
+<p>To ensure consistency in time-based analysis, the InterventionDateTime field was converted into proper POSIXct datetime format:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>clean_data<span class="sc">$</span>InterventionDateTime <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  clean_data<span class="sc">$</span>InterventionDateTime,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"%m/%d/%Y %I:%M:%S %p"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="additional-data-cleaning-and-integration-with-acs" class="level3">
+<h3 class="anchored" data-anchor-id="additional-data-cleaning-and-integration-with-acs">Additional Data Cleaning and Integration with ACS</h3>
+<p>Beyond cleaning the traffic stop records, we performed substantial processing to join the stop-level data with demographic information from the <strong>American Community Survey (ACS) 5-Year Estimates (2015–2019)</strong>. This step was essential for calculating population-adjusted stop rates and identifying overrepresentation patterns in law enforcement practices.</p>
+<section id="standardizing-town-names" class="level4">
+<h4 class="anchored" data-anchor-id="standardizing-town-names">Standardizing Town Names</h4>
+<p>Many entries in the <code>InterventionLocationName</code> field included neighborhood names, misspellings, or non-town labels (e.g., “STORRS”, “SCHOOL”, or even street names). These needed to be cleaned and matched to the <strong>official Connecticut town names</strong> used in the ACS shapefiles.</p>
+<ul>
+<li>We converted all town names to uppercase and removed punctuation.</li>
+<li>A hand-coded alias map was created to convert common neighborhood labels to their corresponding town names. For example:
+<ul>
+<li><code>"STORRS"</code> → <code>"MANSFIELD"</code></li>
+<li><code>"COS COB"</code> → <code>"GREENWICH"</code></li>
+<li><code>"WILLIMANTIC"</code> → <code>"WINDHAM"</code></li>
+</ul></li>
+<li>After alias replacement, unmatched towns were removed from analysis.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> clean_data <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(alias_map, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"TownMatched"</span> <span class="ot">=</span> <span class="st">"from"</span>))<span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">TownMatched =</span> <span class="fu">if_else</span>(<span class="sc">!</span><span class="fu">is.na</span>(to), to, TownMatched)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="dataset-2-american-community-survey-acs-5-year-estimates-20152019---connecticut" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-2-american-community-survey-acs-5-year-estimates-20152019---connecticut">Dataset 2: American Community Survey (ACS) 5-Year Estimates (2015–2019) - Connecticut</h2>
+<ul>
+<li><p>This dataset was downloaded from <a href="https://data.census.gov">data.census.gov</a>, the official platform of the U.S. Census Bureau. It provides free public access to nationwide demographic, economic, and housing data. The specific dataset used here is the ACS 5-Year Estimates (2015–2019) for the state of Connecticut. It can be found by navigating to “Advanced Search,” selecting “Connecticut,” and choosing the “2015–2019 ACS 5-Year Estimates Detailed Tables.”</p></li>
+<li><p>Collected by the U.S. Census Bureau through the American Community Survey, a continuous nationwide survey designed to provide detailed, up-to-date information between each decennial census. The ACS data helps communities plan for transportation, housing, emergency services, and economic development. It is widely used by local governments, federal agencies, nonprofits, and researchers for evidence-based decision making.</p></li>
+<li><p>The file includes population estimates for different racial and ethnic groups across the state and its towns. Columns are organized by population group (such as “White alone” or “Black or African American alone”) and geographic location. For each group and town, the file provides an estimate and a margin of error. Variable names follow a pattern like Town Name!!Estimate and Town Name!!Margin of Error, making it easy to interpret the data structure.</p></li>
+<li><p>This dataset is particularly useful for understanding how Connecticut’s population varies by race and ethnicity at the local level. It supports needs assessment, resource allocation, and social policy development by giving a consistent statistical view of communities across five years. This makes it a reliable tool for tracking trends, comparing towns, and identifying areas for targeted intervention.</p></li>
+</ul>
+<section id="data-files-and-key-variables-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-files-and-key-variables-1">Data Files and Key Variables</h3>
+<p>The dataset contains town-level estimates of population counts by race and ethnicity. These estimates are used to provide population context for interpreting patterns in traffic stop data. Each column represents a specific demographic group, and each row corresponds to a race/ethnicity category (e.g., “Total”, “White alone”, “Black or African American alone”, etc.).</p>
+<section id="key-variables-grouped-and-explained" class="level4">
+<h4 class="anchored" data-anchor-id="key-variables-grouped-and-explained">Key Variables (Grouped and Explained)</h4>
+<p>We categorize the ACS variables into two groups based on what they describe: Total Population and Race-Specific Population.</p>
+<hr>
+<p><strong>1. Total Population</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 71%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Total</code></td>
+<td>Total population in each town (benchmark for all proportions)</td>
+</tr>
+</tbody>
+</table>
+<p>This is the baseline used for computing per-capita metrics and racial proportions.</p>
+<hr>
+<p><strong>2. Race-Specific Population</strong></p>
+<p>These variables represent the number of people in each racial group, regardless of Hispanic ethnicity. They are mutually exclusive and sum to the total population.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 46%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>White alone</code></td>
+<td>Number of people who identified as White only</td>
+</tr>
+<tr class="even">
+<td><code>Black or African American alone</code></td>
+<td>Number of people who identified as Black only</td>
+</tr>
+<tr class="odd">
+<td><code>American Indian and Alaska Native alone</code></td>
+<td>Number of people who identified as AI/AN only</td>
+</tr>
+<tr class="even">
+<td><code>Asian alone</code></td>
+<td>Number of people who identified as Asian only</td>
+</tr>
+<tr class="odd">
+<td><code>Native Hawaiian and Other Pacific Islander alone</code></td>
+<td>Pacific Islander population only</td>
+</tr>
+<tr class="even">
+<td><code>Some other race alone</code></td>
+<td>Individuals who selected “Some other race” only</td>
+</tr>
+<tr class="odd">
+<td><code>Two or more races</code></td>
+<td>People who selected more than one race</td>
+</tr>
+</tbody>
+</table>
+<p>These variables allow us to compute racial representation in the population and compare it to traffic stop data by race.</p>
+<p>Thefollowing figure shows the Top 30 Connecticut Towns by Total Population, excluding the state-level aggregate. This provides a clear reference for how population is distributed geographically across the state:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/top30-town.png" class="img-fluid figure-img"></p>
+<figcaption>Top 30 Connecticut Towns by Total Population</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="cleaning-the-acs-population-data" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-the-acs-population-data">Cleaning the ACS Population Data</h3>
+<p>The ACS data provides racial population estimates per town in Connecticut. To prepare it for merging, we focused on the total population group and applied the following cleaning steps:</p>
+<ul>
+<li>Filtered rows where <code>Label (Grouping)</code> is “Total:” to isolate total population estimates.</li>
+<li>Selected only estimate columns, corresponding to towns.</li>
+<li>Reshaped the data from wide to long format so each row represents a town.</li>
+<li>Cleaned town names by removing artifacts like <code>"!!ESTIMATE"</code>, <code>", CONNECTICUT"</code>, <code>", CDP"</code>, <code>" TOWN"</code> and other suffixes.</li>
+<li>Converted population counts to numeric.</li>
+<li>Filtered only valid Connecticut towns, using shapefile-based town names via the <code>tigris</code> package.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get valid towns from TIGRIS shapefile</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>valid_towns <span class="ot">&lt;-</span> <span class="fu">places</span>(<span class="at">state =</span> <span class="st">"CT"</span>, <span class="at">cb =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(NAME) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_to_upper</span>()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean and reshape ACS total population data</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>total_long <span class="ot">&lt;-</span> race_raw <span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Label (Grouping)</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"Total:"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"!!Estimate"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"Town"</span>, <span class="at">values_to =</span> <span class="st">"PopTotal"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Town =</span> <span class="fu">str_to_upper</span>(Town),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">Town =</span> <span class="fu">str_remove</span>(Town, <span class="st">"!!ESTIMATE"</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Town =</span> <span class="fu">str_remove</span>(Town, <span class="st">", CONNECTICUT"</span>),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Town =</span> <span class="fu">str_remove</span>(Town, <span class="st">",.*$"</span>),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Town =</span> <span class="fu">str_remove</span>(Town, <span class="st">" TOWN"</span>),</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Town =</span> <span class="fu">str_squish</span>(Town),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">PopTotal =</span> <span class="fu">as.numeric</span>(PopTotal)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Town <span class="sc">%in%</span> valid_towns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The resulting <code>total_long</code> dataset contains the total population per valid Connecticut town, with names aligned to geographic shapefiles. This prepares it for merging with race-specific counts or traffic stop data.</p>
+</section>
+<section id="combining-traffic-stops-with-population-data" class="level3">
+<h3 class="anchored" data-anchor-id="combining-traffic-stops-with-population-data">Combining Traffic Stops with Population Data</h3>
+<p>To analyze traffic stop rates across Connecticut towns, we combined summarized stop data with total population estimates from the ACS.</p>
+<p>We first filtered out non-town entries using an official list of Connecticut towns (<code>ct_towns$NAME</code>) from TIGRIS shapefiles, and then grouped the data by town:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>stop_summary <span class="ot">&lt;-</span> clean_data <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(TownMatched <span class="sc">%in%</span> ct_towns<span class="sc">$</span>NAME) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(TownMatched) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">TotalStops =</span> <span class="fu">n</span>(),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">BlackStops =</span> <span class="fu">sum</span>(SubjectRaceCode <span class="sc">==</span> <span class="st">"B"</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This gives us one row per town with total stops and number of stops involving Black individuals.</p>
+<p>We then ensured that town names in the population data matched the format of the stop data:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>total_long <span class="ot">&lt;-</span> total_long <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Town =</span> <span class="fu">str_to_upper</span>(Town),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Town =</span> <span class="fu">str_remove_all</span>(Town, <span class="st">'[[:punct:]]'</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Town =</span> <span class="fu">str_squish</span>(Town)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Finally, we joined the two datasets using town names to produce a combined summary table:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>combined_summary <span class="ot">&lt;-</span> stop_summary <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(total_long, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"TownMatched"</span> <span class="ot">=</span> <span class="st">"Town"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This <code>combined_summary</code> dataset now includes, for each town: - Total number of traffic stops - Number of stops involving Black drivers - Total population</p>
+<p>It allows us to compute metrics such as per-capita stop rates and racial disproportionality indicators.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
