@@ -1,0 +1,19 @@
+---
+title: "Blog Post 8"
+description:  |
+  Finalize the project by refining the analysis and improving visualizations
+  and tables.
+author: "Team13"
+date: "2025-04-30"
+date-modified: "2025-04-30"
+draft: FALSE
+---
+
+### Continued Exploration and Interactive Design
+We initially used a Shiny app to build an interactive tool for exploring the data. Recently, we’ve been experimenting with an alternative approach to improve the clarity and usefulness of the interactivity, aiming to make it more intuitive for users. In addition, we have assembled a core dataset for analysis and are considering bringing in supplementary data sources to enrich our findings and provide deeper insights.
+
+### Thesis Statement
+Our project examines how people of different races are treated during traffic stops. We look at how often drivers from different racial groups are stopped, why they are stopped, and what happens afterward: such as whether they are searched, arrested, or let go with a warning. We also work to find out if some police departments treat racial groups differently in a way that shows up clearly in the data.
+
+### Polishing Visuals and Tables
+We are continuing to refine our charts and tables, working on clearer titles, informative captions, and effective use of highlights and annotations. We’re  exploring tools like ggpubr to improve plot presentation, and the gt package to enhance the clarity and aesthetics of our data tables.
