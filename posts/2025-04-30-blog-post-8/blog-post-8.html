@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Grace Chong, Ruxin Wen, Xuru Miao">
-<meta name="dcterms.date" content="2025-02-26">
-<meta name="description" content="This post explores three potential datasets for analyzing racial disparities from different perspectives.">
+<meta name="author" content="Team13">
+<meta name="dcterms.date" content="2025-04-30">
+<meta name="description" content="Finalize the project by refining the analysis and improving visualizations and tables.">
 
-<title>Blog Post 1 – Team 13 MA [46]15 Final Project</title>
+<title>Blog Post 8 – Team 13 MA [46]15 Final Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,10 +118,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Blog Post 1</h1>
+      <h1 class="title">Blog Post 8</h1>
                   <div>
         <div class="description">
-          <p>This post explores three potential datasets for analyzing racial disparities from different perspectives.</p>
+          <p>Finalize the project by refining the analysis and improving visualizations and tables.</p>
         </div>
       </div>
                 </div>
@@ -133,21 +133,21 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Grace Chong, Ruxin Wen, Xuru Miao </p>
+               <p>Team13 </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 26, 2025</p>
+        <p class="date">April 30, 2025</p>
       </div>
     </div>
     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">February 26, 2025</p>
+        <p class="date-modified">April 30, 2025</p>
       </div>
     </div>
       
@@ -165,23 +165,17 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="dataset-1-home-mortgage-disclosure-act-data" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-1-home-mortgage-disclosure-act-data">Dataset 1: Home Mortgage Disclosure Act Data</h3>
-<p><a href="https://ffiec.cfpb.gov/data-publication/dynamic-national-loan-level-dataset/2023">Home Mortgage Disclosure Act Data</a></p>
-<p>This dataset contains millions of records on mortgage applications and originations. One can extract specific information by year from 2000 to 2023. It includes data on applicant demographics, loan characteristics, and property details.This data aims to promote fair lending practices and help identify potential discriminatory lending patterns.</p>
-<p>We will be using this data in CSV format. Cleaning will be a given, but the main challenges would be investigating the years and the significance of the patterns within each year. An additional challenge is that this dataset is large and may require computational resources (computing cluster). Some questions we may investigate: Are there racial disparities in mortgage approval rates, controlling for income and credit scores? How do racial patterns in home loan applications vary across different geographic regions?</p>
+<section id="continued-exploration-and-interactive-design" class="level3">
+<h3 class="anchored" data-anchor-id="continued-exploration-and-interactive-design">Continued Exploration and Interactive Design</h3>
+<p>We initially used a Shiny app to build an interactive tool for exploring the data. Recently, we’ve been experimenting with an alternative approach to improve the clarity and usefulness of the interactivity, aiming to make it more intuitive for users. In addition, we have assembled a core dataset for analysis and are considering bringing in supplementary data sources to enrich our findings and provide deeper insights.</p>
 </section>
-<section id="dataset-2-traffic-stops---racial-profiling-prohibition-project" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-2-traffic-stops---racial-profiling-prohibition-project">Dataset 2: Traffic Stops - Racial Profiling Prohibition Project</h3>
-<p><a href="https://data.ct.gov/Public-Safety/Traffic-Stops-Racial-Profiling-Prohibition-Project/nahi-zqrt/about_data">Traffic Stops - Racial Profiling Prohibition Project</a></p>
-<p>This dataset contains 3.1 million rows and 42 columns, with each row representing a traffic stop in Connecticut. The columns include information about the date, time, location, and reason for the stop, as well as details about the driver’s race, ethnicity, gender, and age. It also records the outcome of each stop, such as warnings, tickets, searches, or arrests. This data was collected as part of Connecticut’s Racial Profiling Prohibition Project, established by Public Act 12-74. The goal is to monitor and prevent racial profiling in traffic enforcement, ensuring compliance with federal anti-profiling laws. The data is used to provide transparency in law enforcement practices and inform legislative decisions.</p>
-<p>We aim to explore whether there are racial disparities in traffic stops, including differences in the frequency of stops, reasons for stops, and outcomes such as searches, arrests, or warnings. The data is available in downloadable CSV format, making it straightforward to load using tools like R. However the dataset’s size (3.1 million rows) may require efficient data handling and processing techniques to ensure smooth analysis.</p>
+<section id="thesis-statement" class="level3">
+<h3 class="anchored" data-anchor-id="thesis-statement">Thesis Statement</h3>
+<p>Our project examines how people of different races are treated during traffic stops. We look at how often drivers from different racial groups are stopped, why they are stopped, and what happens afterward: such as whether they are searched, arrested, or let go with a warning. We also work to find out if some police departments treat racial groups differently in a way that shows up clearly in the data.</p>
 </section>
-<section id="dataset-3-civil-rights-data-collection---advanced-placement" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-3-civil-rights-data-collection---advanced-placement">Dataset 3: Civil Rights Data Collection - Advanced Placement</h3>
-<p><a href="https://ocrdata.ed.gov/profile/us/la/caddo_parish/youree_dr._middle_advanced_placement_magnet_school?surveyYear=2020&amp;nces=220030000213">Civil Rights Data Collection - Advanced Placement</a></p>
-<p>This dataset from the Civil Rights Data Collection (CRDC) contains 98,010 rows and 98 columns, documenting Advanced Placement (AP) course participation across schools in various U.S. states. Each row represents a school, detailing AP enrollment, exam participation, and performance, disaggregated by race, gender, and special education status. By analyzing this dataset, we can gain insights into systemic inequalities in advanced education opportunities. The findings can help inform policies aimed at closing racial gaps in access to college-preparatory coursework, ensuring that all students—regardless of racial background—have equitable opportunities to succeed in higher education.</p>
-<p>The dataset is available in CSV format and can be loaded into analytical tools like Python (pandas) or R (Tidyverse) for processing. While the data is relatively structured, challenges include handling missing values, standardizing racial categories across different states, and ensuring that comparisons are made in the appropriate socioeconomic and policy context. Additionally, since the dataset is large (98,010 rows and 98 columns), efficient data handling techniques will be necessary to ensure smooth analysis.</p>
+<section id="polishing-visuals-and-tables" class="level3">
+<h3 class="anchored" data-anchor-id="polishing-visuals-and-tables">Polishing Visuals and Tables</h3>
+<p>We are continuing to refine our charts and tables, working on clearer titles, informative captions, and effective use of highlights and annotations. We’re exploring tools like ggpubr to improve plot presentation, and the gt package to enhance the clarity and aesthetics of our data tables.</p>
 
 
 </section>
