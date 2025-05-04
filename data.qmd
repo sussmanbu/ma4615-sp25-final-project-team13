@@ -8,30 +8,6 @@ draft: false
 ![](images/connecticut.jpg)
 
 
-
-## Rubric: On this page
-
-You will
-
-* Describe where/how to find data.
-  * You must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.
-  * Why was the data collected/curated? Who put it together? (This is important, if you don't know why it was collected then that might not be a good dataset to look at.
-* Describe the different data files used and what each variable means. 
-  * If you have many variables then only describe the most relevant ones, possibly grouping together variables that are similar, and summarize the rest.
-  * Use figures or tables to help explain the data. For example, showing a histogram or bar chart for a particularly important variable can provide a quick overview of the values that variable tends to take.
-* Describe any cleaning you had to do for your data.
-  * You *must* include a link to your `clean_data.R` file.
-  * Rename variables and recode factors to make data more clear.
-  * Also, describe any additional R packages you used outside of those covered in class.
-  * Describe and show code for how you combined multiple data files and any cleaning that was necessary for that.
-  * Some repetition of what you do in your `clean_data.R` file is fine and encouraged if it helps explain what you did.
-* Organization, clarity, cleanliness of the page
-  * Make sure to remove excessive warnings, use clean easy-to-read code (without side scrolling), organize with sections, use bullets and other organization tools, etc.
-  * This page should be self-contained.
-  
-
-
-
 ---
   
 
@@ -304,7 +280,7 @@ total_long <- race_raw |>
 
 The resulting `total_long` dataset contains the total population per valid Connecticut town, with names aligned to geographic shapefiles. This prepares it for merging with race-specific counts or traffic stop data.
 
-### Combining Traffic Stops with Population Data
+## Combine Datasets
 To analyze traffic stop rates across Connecticut towns, we combined summarized stop data with total population estimates from the ACS.
 
 
@@ -346,3 +322,26 @@ This `combined_summary` dataset now includes, for each town:
 - Total population
 
 It allows us to compute metrics such as per-capita stop rates and racial disproportionality indicators.
+
+
+## Extra Library Used in Analysis
+
+1. `broom`: Converts statistical model objects into tidy data frames for easier analysis and visualization.
+
+2. `knitr`: Enables embedding R code and results into dynamic reports, supporting reproducible research.
+
+3. `lubridate`: Simplifies the process of working with dates and times in data analysis.
+
+4. `gt`: Creates presentation-ready tables, ideal for summarizing regression outputs and descriptive statistics.
+
+5. `corrplot`: Visualizes correlation matrices using customizable and intuitive plots.
+
+6. `tigris`: Downloads and handles US Census TIGER/Line shapefiles for spatial data analysis.
+
+7. `sf`: Provides tools for handling and analyzing spatial vector data, essential for mapping and geographic modeling.
+
+8. `stringr`: Offers consistent functions for string manipulation and regular expression matching.
+
+9. `scales`: Assists in scaling and formatting axes and labels in plots, improving visual clarity.
+
+10. `viridis`: Provides perceptually uniform color maps, especially useful for colorblind-friendly visualizations.
