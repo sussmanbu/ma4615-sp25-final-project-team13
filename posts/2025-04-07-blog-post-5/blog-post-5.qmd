@@ -1,0 +1,32 @@
+---
+title: "Blog Post 5"
+description:  |
+  Exploring multiple related datasets for comparative analysis and deeper
+  insight into key trends.
+author: "Team13"
+date: "2025-04-07"
+date-modified: "2025-04-07"
+draft: FALSE
+---
+### Challenges in Combining Data
+
+Our primary dataset contains over 3.1 million individual traffic stop records from 2013 to 2019. While it includes location and time fields such as InterventionLocationName and InterventionDate, these are not standardized geographic or temporal identifiers. In particular, the InterventionLocationName field is highly inconsistent. It includes a mix of town names, neighborhoods, street names, and ambiguous area labels, with no clear or consistent geographic level. This lack of standardization makes it difficult to determine which level of external geographic data, such as town, county, or census tract, would align properly with our records.
+
+As a result, directly joining external datasets to our traffic stop records is not feasible. Instead, we are shifting toward a comparative analysis approach using related datasets. By grouping and summarizing our data by town or broader location categories, where possible, we can bring it to the same scale as external demographic, socioeconomic, or crime-related datasets. This allows us to explore how broader contextual factors may relate to enforcement outcomes such as search and arrest rates, even without precise one-to-one record matching.
+
+### Related Datasets for Comparative Analysis
+
+[U.S. Census Bureau – American Community Survey (ACS)](https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/)
+
+This dataset provides detailed demographic information, including racial and ethnic composition across geographic areas. We are using it to compare the racial distribution of drivers stopped in our dataset with the population makeup of the areas where those stops occurred. By doing so, we can evaluate whether certain racial groups are being stopped at disproportionately high rates relative to their local population share, which can help uncover potential patterns of racial bias in enforcement.
+
+[Connecticut Data Collaborative – Demographic and Economic Indicators](https://www.ctdata.org/demographics)
+
+This dataset offers a range of socioeconomic data, such as median household income, poverty levels, and educational attainment across Connecticut communities. We are using this information to explore how economic conditions may relate to traffic enforcement behavior. For example, we aim to assess whether areas with lower income or higher poverty rates experience more frequent traffic stops or more severe enforcement outcomes, such as higher search or arrest rates.
+
+[FBI Crime Data Explorer](https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/crime-trend)
+
+This source provides crime statistics reported by law enforcement agencies, including data on offense types and trends over time. We are using this dataset to provide context for our enforcement data—specifically, to examine whether high levels of traffic stops or arrests in certain areas are consistent with elevated crime levels. This comparison helps determine whether enforcement intensity is justified by public safety concerns, or if disparities remain after accounting for crime rates.
+
+### Next Steps
+In seeking out these additional datasets for analysis, we have remained focused on the core goals of our project: to investigate patterns of racial disparity in traffic enforcement in Connecticut and to provide strong supporting evidence for any observed trends. Specifically, we are examining whether certain racial groups are subject to higher rates of searches, arrests, or other enforcement outcomes. By comparing stop outcomes with demographic, socioeconomic, and crime-related data, we aim to assess whether these enforcement patterns are proportionate or if they suggest potential systemic bias. Our next steps involve selecting relevant external datasets, conducting exploratory data analysis to identify meaningful trends, and comparing those findings to our traffic stop data. These comparisons will guide our interpretation and help shape the foundation for future analysis.

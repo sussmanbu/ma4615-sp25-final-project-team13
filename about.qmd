@@ -1,0 +1,34 @@
+---
+title: "About"
+image: images/car-image.png
+about:
+  template: jolla
+---
+
+
+This comes from the file `about.qmd`.
+
+This is a website for the final project for MA[46]15 Data Science with R by Team 13.
+The members of this team are below.
+
+## Grace Chong
+Grace is a senior undergraduate student majoring in Data Science and minoring in Art. 
+[Github](https://github.com/grace4ch)
+
+## Ruxin Wen
+Ruxin is a junior undergraduate student majoring in Data Science. [Github](https://github.com/wenruxin)
+
+## Xuru Miao
+
+Xuru is a graduate student majoring in Bioinformatics.
+[Github](http://github.com/Alice-ppt)
+
+## Jimin Park
+Jimin is a senior undergraduate student majoring in Data Science. 
+[Github](http://github.com/jimin599)
+
+<!-- Please leave in the information below -->
+
+### About this Template.
+
+This is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463).

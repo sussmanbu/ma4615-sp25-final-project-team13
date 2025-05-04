@@ -1,0 +1,17 @@
+---
+title: "Blog Post 7"
+description:  |
+  Exploring ideas for the interactive to make data more engaging and
+  user-driven.
+author: "Team13"
+date: "2025-04-22"
+date-modified: "2025-04-22"
+draft: FALSE
+---
+###  Progress on Our Interactive Visualization
+
+For this week’s interactive progress update, we’ve made solid progress on building the initial version of our Shiny dashboard. The interactive visualization displays the percentage of traffic stops that resulted in different outcomes (arrests, vehicle tows, or searches) broken down by race and day of the week. Users can filter the data by race (White, Black, Asian, American Indian) and by event type, which allows them to both see broad patterns and focus in on specific groups or outcomes.
+
+The general structure and functionality of the interactive are good so far, but the code still needs some refinement. There are parts of the logic we want to clean up, especially to make the UI smoother and the legend easier to read. In the coming days, we plan to improve usability, polish the design.
+
+Moving forward, our focus will shift toward finalizing the project. We plan to clean up the codebase, refine the design elements, and clearly organize our analysis so that it’s accessible and compelling. 

@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+/.quarto/
+/dataset-ignore/
+.DS_Store
+Thumbs.db
+/_site/
+.RDataTmp
+dataset_for_shiny/shiny_stops.rds
