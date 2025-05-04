@@ -29,7 +29,7 @@ null_counts
 # Plot: Bar chart of null counts per column (log10 scale)
 ggplot(null_df, aes(y = reorder(Column, NullCount), x = log10(NullCount + 1))) +
   geom_bar(stat = "identity", fill = "cornflowerblue") +
-  labs(title = "Log10 Scale of Null Counts per Column (Descending)",
+  labs(title = "Log10 Scale of Null Counts per Column",
        x = "Log10(Null Count + 1)",
        y = "Columns") +
   theme_minimal()
@@ -147,6 +147,12 @@ clean_data <- clean_data|>
 
 clean_data|>
   map(~ unique(.x))
+
+clean_data$InterventionDateTime <- as.POSIXct(
+  clean_data$InterventionDateTime,
+  format = "%m/%d/%Y %I:%M:%S %p"
+)
+
 
 
 write_rds(clean_data, here::here("dataset-ignore", "clean_selected_data.rds"))
