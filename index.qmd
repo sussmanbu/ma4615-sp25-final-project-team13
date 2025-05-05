@@ -13,6 +13,6 @@ title-block-banner: true
 
 ![](images/MainPage.jpeg)
 
-# Final Project due May 5, 2024 at 11:59pm.
 
-This comes from the `index.qmd` file.
+
+
