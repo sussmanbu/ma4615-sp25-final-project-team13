@@ -7,21 +7,18 @@ library(lubridate)
 library(here)
 
 #–– 1) Load the Shiny dataset and munge once at startup
-df <- read_rds(here("dataset_for_shiny","shiny_stops.rds")) %>%
-  
+df <- read_rds(here("dataset-ignore", "light_shiny_stops.rds")) %>%
   mutate(
     InterventionDateTime = mdy_hms(InterventionDateTime),
     DayOfWeek = factor(
       weekdays(InterventionDateTime),
-      levels = c("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+      levels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
     ),
-    # Map race codes
     RaceFull = recode(SubjectRaceCode,
-                      W="White", B="Black", A="Asian", I="American Indian"),
-    SexFull  = recode(SubjectSexCode,
-                      M="Male", F="Female", .default="Other")
+                      W = "White", B = "Black", A = "Asian", I = "American Indian"),
+    SexFull = recode(SubjectSexCode,
+                     M = "Male", F = "Female", .default = "Other")
   )
-
 # Possible choices
 race_choices   <- unique(df$RaceFull)
 reason_choices <- unique(df$InterventionReasonCode)

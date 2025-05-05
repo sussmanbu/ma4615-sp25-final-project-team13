@@ -1,0 +1,12 @@
+name: ct_race_dashboard
+title: ct_race_dashboard
+username: rxw06
+account: rxw06
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14682967
+bundleId: 10229807
+url: https://rxw06.shinyapps.io/ct_race_dashboard/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
