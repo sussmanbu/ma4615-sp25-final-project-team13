@@ -18,7 +18,6 @@ Between 2013 and 2019, police officers across Connecticut recorded more than thr
 While traffic stops are a routine part of law enforcement, they are not distributed evenly across populations. In Connecticut, Black drivers are often stopped at rates that exceed their share of the local population, and these disparities vary widely from town to town. By combining traffic stop records with census data, we can uncover geographic patterns that raise important questions about fairness on the road. To help explore these trends further, this page also includes an interactive dashboard that allows users to examine stop outcomes across race, age, gender, department, and time.
 
 
-
 # Where Are the Most Traffic Stops Happening?
 
 To understand the scale and distribution of traffic stops across the state, we began by mapping the total number of stops recorded in each Connecticut town between 2013 and 2019. This count helps highlight which areas experience the most traffic enforcement activity. Not surprisingly, large cities like Hartford, New Haven, and Bridgeport appear with the highest counts. However, several smaller or mid-sized towns also stand out, showing unexpectedly high numbers of stops relative to their size.
