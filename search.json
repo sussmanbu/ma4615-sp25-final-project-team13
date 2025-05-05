@@ -170,7 +170,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Who Gets Stopped? Uncovering Racial Disparities in Connecticut Traffic Enforcement",
+    "title": "Connecticut Under the Light: Rethinking Fairness on the Road",
     "section": "",
     "text": "Final Project due May 5, 2024 at 11:59pm.\nThis comes from the index.qmd file.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post 8\n\n\n\n\n\nFinalize the project by refining the analysis and improving visualizations and tables. \n\n\n\n\n\nApr 30, 2025\n\n\nTeam13\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post 7\n\n\n\n\n\nExploring ideas for the interactive to make data more engaging and user-driven. \n\n\n\n\n\nApr 22, 2025\n\n\nTeam13\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post 6\n\n\n\n\n\nDeeper analysis through dataset combination and added visualizations. \n\n\n\n\n\nApr 14, 2025\n\n\nTeam13\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post 5\n\n\n\n\n\nExploring multiple related datasets for comparative analysis and deeper insight into key trends. \n\n\n\n\n\nApr 7, 2025\n\n\nTeam13\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post 4\n\n\n\n\n\nFurther exploration and initial modeling to analyze key relationships in the dataset. \n\n\n\n\n\nMar 31, 2025\n\n\nTeam13\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post 3\n\n\n\n\n\nThis post covers data loading and cleaning, as well as insights from the Data for Equity section. \n\n\n\n\n\nMar 24, 2025\n\n\nTeam13\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post 2\n\n\n\n\n\nThis post confirms the use of the dataset and provides its background explanation. \n\n\n\n\n\nMar 16, 2025\n\n\nRuxin Wen, Grace Chong, Xuru Miao\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post 1\n\n\n\n\n\nThis post explores three potential datasets for analyzing racial disparities from different perspectives. \n\n\n\n\n\nFeb 26, 2025\n\n\nGrace Chong, Ruxin Wen, Xuru Miao\n\n\n\n\n\n\n\n\n\n\n\n\nGeneral Tips\n\n\n\n\n\nSome small but important tips to follow. \n\n\n\n\n\nOct 4, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\n\n\n\n\n\n\nExamples\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 26, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started\n\n\n\n\n\n\n\n\nDirections to set up your website and create your first post. \n\n\n\n\n\nFeb 23, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Team Meeting\n\n\n\n\n\n\n\n\nThis post details the steps you’ll take for your first team meeting. \n\n\n\n\n\nFeb 21, 2024\n\n\nDaniel Sussman\n\n\n\n\n\n\nNo matching items"
   },
@@ -212,22 +212,15 @@
   {
     "objectID": "big_picture.html",
     "href": "big_picture.html",
-    "title": "Equal Roads?”: Uncovering Racial Disparities in Connecticut Traffic Stops",
+    "title": "Equal Roads? Uncovering Racial Disparities in Connecticut Traffic Stops",
     "section": "",
-    "text": "This comes from the file big_picture.qmd.\nThink of this page as your 538/Upshot style article. This means that you should try to tell a story through the data and your analysis. Read articles from those sites and similar sites to get a feeling for what they are like. Try to write in the style of a news or popular article. Importantly, this page should be geared towards the general public. You shouldn’t assume the reader understands how to interpret a linear regression or a complicated plot. Focus on interpretation and visualizations."
+    "text": "Between 2013 and 2019, police officers across Connecticut recorded more than three million traffic stops. Each stop may seem like a small event, but together they form a large and detailed record of how traffic laws are enforced across the state. By combining this enforcement data with U.S. Census population estimates, we can begin to examine how often different racial groups are stopped, and whether those patterns vary from town to town. This page presents the results of that analysis and highlights where disparities may exist in how drivers are treated on the road. While the data includes drivers of all racial backgrounds, particular attention is given to stops involving Black drivers, whose stop rates often appear elevated when compared to their share of the local population."
   },
   {
-    "objectID": "big_picture.html#rubric-on-this-page",
-    "href": "big_picture.html#rubric-on-this-page",
-    "title": "Equal Roads?”: Uncovering Racial Disparities in Connecticut Traffic Stops",
-    "section": "Rubric: On this page",
-    "text": "Rubric: On this page\n\nTitle\n\nYour big picture page should have a creative/click-bait-y title/headline that provides a hint about your thesis.\n\nClarity of Explanation\n\nYou should have a clear thesis/goal for this page. What are you trying to show? Make sure that you explain your analysis in detail but don’t go into top much mathematics or statistics. The audience for this page is the general public (to the extent possible). Your thesis should be a statement, not a question.\nEach figure should be very polished and also not too complicated. There should be a clear interpretation of the figure so the figure has a clear purpose. Even something like a histogram can be difficult to interpret for non-experts.\n\nCreativity\n\nDo your best to make things interesting. Think of a how a news article or a magazine story might draw you in. Think of how each part of your analysis supports the previous part or provides a different perspective.\n\nInteractive component\n\nQuality and ease of use of the interactive components. Is it clear what can be explored using your interactive components? Does it enhance and reinforce your conclusions?\n\nThis page should be self-contained.\n\nNote: This page should have no code visible, i.e. use #| echo: FALSE."
-  },
-  {
-    "objectID": "big_picture.html#rubric-other-components",
-    "href": "big_picture.html#rubric-other-components",
-    "title": "Equal Roads?”: Uncovering Racial Disparities in Connecticut Traffic Stops",
-    "section": "Rubric: Other components",
-    "text": "Rubric: Other components\n\nVideo Recording\nMake a video recording (probably using Zoom) demonstrating your interactive components. You should provide a quick explanation of your data and demonstrate some of the conclusions from your EDA. This video should be no longer than 4 minutes. Include a link to your video (and password if needed) in your README.md file on your Github repository. You are not required to provide a link on the website. This can be presented by any subset of the team members.\n\n\nRest of the Site\nFinally, here are important things to keep in mind for the rest of the site.\nThe main title of your page is informative. Each post has an author/description/informative title. All lab required posts are present. Each page (including the home page) has a nice featured image associated with it. Your about page is up to date and clean. You have removed the generic posts from the initial site template."
+    "objectID": "big_picture.html#thesis-statement",
+    "href": "big_picture.html#thesis-statement",
+    "title": "Equal Roads? Uncovering Racial Disparities in Connecticut Traffic Stops",
+    "section": "Thesis Statement",
+    "text": "Thesis Statement\nWhile traffic stops are a routine part of law enforcement, they are not distributed evenly across populations. In Connecticut, Black drivers are often stopped at rates that exceed their share of the local population, and these disparities vary widely from town to town. By combining traffic stop records with census data, we can uncover geographic patterns that raise important questions about fairness on the road. To help explore these trends further, this page also includes an interactive dashboard that allows users to examine stop outcomes across race, age, gender, department, and time."
   }
 ]
