@@ -1,5 +1,5 @@
 ---
-title: "Who Gets Stopped? Uncovering Racial Disparities in Connecticut Traffic Enforcement"
+title: "Connecticut Under the Light: Rethinking Fairness on the Road"
 listing:
   contents: "posts/*/*.qmd"
   sort: "date desc"
