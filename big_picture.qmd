@@ -11,7 +11,9 @@ filters:
 
 ---
 
-Between 2013 and 2019, police officers across Connecticut recorded more than three million traffic stops. Each stop may seem like a small event, but together they form a large and detailed record of how traffic laws are enforced across the state. By combining this enforcement data with U.S. Census population estimates, we can begin to examine how often different racial groups are stopped, and whether those patterns vary from town to town. This page presents the results of that analysis and highlights where disparities may exist in how drivers are treated on the road. While the data includes drivers of all racial backgrounds, particular attention is given to stops involving Black drivers, whose stop rates often appear elevated when compared to their share of the local population.
+Between 2013 and 2019, police officers across Connecticut recorded more than three million traffic stops. Each stop may seem like a small event, but together they form a large and detailed record of how traffic laws are enforced across the state. By combining this enforcement data with U.S. Census population estimates, we can begin to examine how often different racial groups are stopped, and whether those patterns vary from town to town. It’s like trying to compare how busy two restaurants are, you can’t just count customers; you also need to know how many people live nearby.
+
+This page presents the results of that analysis and highlights where disparities may exist in how drivers are treated on the road. While the data includes drivers of all racial backgrounds, particular attention is given to stops involving Black drivers, whose stop rates often appear elevated when compared to their share of the local population.
 
 ## Thesis Statement
 
@@ -47,10 +49,10 @@ To further investigate how closely stop rates align with local demographics, we 
 
 ![](images/stoprate_vs_poprate_scatter.png)
 
-Towns above the parity line indicate that Black drivers are stopped more frequently than expected based on population share, while towns below suggest the opposite. Most towns fall above the line, with a trend line that slopes upward but remains consistently above parity. This pattern reinforces earlier findings from the Over-Representation Index and points to a widespread gap between stop rates and local demographics. While this does not explain the reasons behind the discrepancy, it highlights the value of population-adjusted metrics in revealing structural patterns in enforcement.
+Towns above the parity line indicate that Black drivers are stopped more frequently than expected based on their share of the population, while towns below suggest the opposite. The majority of towns fall above this line, and the upward-sloping trend suggests that these disparities are both widespread and systematic. In fact, over 60% of Connecticut towns show stop rates for Black drivers that exceed their population share, even after accounting for local demographics. Just as we wouldn’t judge a school’s performance by the number of students alone, we can’t assess enforcement fairness without considering who lives in each community.
 
 
-### Exploring Traffic Enforcement Patterns Interactively
+# Exploring Traffic Enforcement Patterns Interactively
 
 To supplement the static visualizations, an interactive dashboard was developed to examine traffic stop patterns across Connecticut by race, sex, age, stop reason, and police department. Built using R Shiny and hosted online, the tool enables customized exploration of outcomes such as arrest, search, and towing rates under different conditions and demographic groups.
 
@@ -59,7 +61,12 @@ The dashboard is structured around key themes: stop outcomes by day of the week,
 [Explore the interactive dashboard here](https://rxw06.shinyapps.io/ct_race_dashboard/)
 
 ---
-Across many Connecticut towns, Black drivers are stopped at rates that often exceed their share of the local population. These patterns are not only visible in the static maps and charts, but also emerge clearly through the interactive dashboard. By exploring arrest, search, and towing rates across different races, age groups, and towns, users can observe for themselves how enforcement outcomes vary. The dashboard reinforces the broader trends identified in this analysis and offers an accessible tool for anyone interested in understanding where disparities appear and for whom. While the data does not explain why these differences exist, recognizing them is a crucial step toward promoting fairness and accountability on the road.
+
+# Key Findings
+
+Across Connecticut, racial disparities in traffic enforcement are not confined to a few isolated areas. Towns with both large and small populations show patterns of disproportionate stops involving Black drivers. While major cities like Hartford and Bridgeport have high overall stop volumes, many smaller towns also exhibit elevated Over-Representation Index values. These geographic patterns suggest that racial disparities are not purely a product of urban density or traffic volume but are instead widespread and systematic. Even in towns with relatively small Black populations, stop rates for Black drivers frequently exceed parity, reinforcing the notion that structural differences in enforcement exist across the state.
+
+In addition to geographic analysis, the interactive dashboard reveals disparities in specific enforcement outcomes. Across the week, Black drivers consistently face the highest arrest, search, and tow rates compared to other racial groups, with differences particularly pronounced on weekends. Investigative stops, those not directly tied to equipment issues or traffic violations, result in the highest arrest rates overall, but Black drivers also experience disproportionately high enforcement outcomes even during routine stops. Moreover, male drivers are more likely than female drivers to be arrested, searched, or towed across nearly every category. These interactive trends provide a deeper look into how race and gender intersect with enforcement decisions, highlighting consistent patterns that extend beyond location alone.
 
 # Looking Ahead
 
